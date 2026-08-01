@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>انضم لفريقنا | حابي للتكنولوجيا الحيوية الزراعية</title>
+<meta name="description" content="ابنِ مستقبلك المهني مع حابي. نحن نبحث عن المبدعين والخبراء في مجال التكنولوجيا الحيوية والزراعة المستدامة.">
+<link rel="icon" type="image/jpeg" href="hapi-logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:#0b1a0e;color:#e4e0d4;line-height:1.8;overflow-x:hidden}
+:root{
+  --gold:#C8A94A;--gold2:#E0C97A;--gold3:rgba(200,169,74,0.15);--gold4:rgba(200,169,74,0.07);
+  --panel:#162819;--panel2:#1a3020;--border:rgba(200,169,74,0.2);--cream:#e4e0d4;
+  --muted:#7a9882;--faint:#3a5a42;--r:8px;--r2:16px;
+}
+a{text-decoration:none;color:var(--gold)}
+a:hover{color:var(--gold2)}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;inset-inline:0;top:0;z-index:999;height:66px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 3rem;
+  background:rgba(11,26,14,0.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{width:38px;height:38px;border-radius:var(--r);border:1px solid var(--border);object-fit:cover}
+.nav-text strong{display:block;font-size:13px;font-weight:700;color:var(--cream)}
+.nav-text span{font-size:10px;color:var(--muted)}
+.nav-back{background:var(--gold);color:#0b1a0e;padding:8px 20px;border-radius:var(--r);font-size:13px;font-weight:700;font-family:'Cairo',sans-serif;text-decoration:none}
+.nav-back:hover{background:var(--gold2)}
+
+/* ── HERO ── */
+.hero{
+  min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:8rem 2rem 2rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200,169,74,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, rgba(94,203,138,0.05) 0%, transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(200,169,74,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,74,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 0%, black 0%, transparent 80%);
+}
+.hero-content{position:relative;z-index:1;max-width:760px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold3);border:1px solid var(--border);
+  border-radius:100px;padding:6px 18px;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.5rem;
+}
+.hero-eyebrow::before{content:'◆';font-size:8px}
+.hero h1{
+  font-size:clamp(2.2rem,5vw,3.5rem);font-weight:900;color:var(--cream);
+  line-height:1.2;margin-bottom:1.2rem;
+}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:14.5px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.9}
+
+/* ── WRAP & FORM ── */
+.page-wrap{max-width:720px;margin:0 auto;padding:0 2rem 5rem;position:relative;z-index:2}
+
+.form-panel{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--r2);
+  padding:2.5rem;box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+.form-section-title{
+  font-size:15px;font-weight:700;color:var(--gold);
+  border-bottom:1px solid var(--border);padding-bottom:6px;margin:2rem 0 1.2rem;
+}
+.form-section-title:first-of-type{margin-top:0}
+
+.form-group{margin-bottom:1.4rem}
+.form-group.row{
+  display:flex;gap:1rem;
+}
+.form-group.row > div{flex:1}
+
+label{display:block;font-size:13px;font-weight:600;color:var(--cream);margin-bottom:6px}
+label span{color:var(--gold);margin-right:3px}
+
+input[type="text"],input[type="email"],input[type="number"],select,textarea{
+  width:100%;background:var(--panel2);border:1px solid var(--border);
+  border-radius:var(--r);padding:10px 14px;color:var(--cream);
+  font-family:'Cairo',sans-serif;font-size:13.5px;transition:all 0.2s;
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--gold);background:#1d3523;
+}
+textarea{resize:vertical;min-height:90px}
+
+/* Custom File Upload */
+.file-upload-wrapper {
+  position: relative;
+  width: 100%;
+}
+.file-upload-wrapper input[type="text"] {
+  padding-left: 100px;
+}
+.file-upload-btn {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  background: var(--gold3);
+  border-right: 1px solid var(--border);
+  color: var(--gold);
+  border-radius: var(--r) 0 0 var(--r);
+  padding: 0 15px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.file-upload-wrapper:hover .file-upload-btn {
+  background: var(--gold);
+  color: #0b1a0e;
+}
+
+/* Submit Button */
+.submit-btn{
+  width:100%;background:var(--gold);color:#0b1a0e;border:none;
+  padding:14px;border-radius:var(--r);font-family:'Cairo',sans-serif;
+  font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;gap:10px;margin-top:2rem;transition:all 0.2s;
+}
+.submit-btn:hover{
+  background:var(--gold2);transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(200,169,74,0.3);
+}
+.submit-btn svg{width:20px;height:20px;fill:currentColor}
+
+/* ── FOOTER ── */
+.footer-line{text-align:center;margin-top:4rem;font-size:11px;color:var(--faint);border-top:1px solid var(--border);padding-top:1.5rem}
+
+@media(max-width:640px){
+  .nav{padding:0 1.2rem}
+  .hero h1{font-size:1.8rem}
+  .form-panel{padding:1.5rem}
+  .form-group.row{flex-direction:column;gap:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="hapi-logo.jpeg" alt="Hapi Logo" class="nav-logo-img">
+    <div class="nav-text">
+      <strong>Hapi Agri-Biotech</strong>
+      <span>حابي للتكنولوجيا الحيوية الزراعية</span>
+    </div>
+  </a>
+  <a class="nav-back" href="index.html">← العودة للرئيسية</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Careers · فرص العمل والنمو</div>
+    <h1>صمّم <em>مستقبل الغذاء</em> معنا</h1>
+    <p class="hero-sub">
+      نحن لا نبحث عن موظفين تقليديين، بل عن شركاء طموحين يشاركوننا شغف الابتكار الحيوي والهندسة الزراعية المستدامة لتطوير القطاع الزراعي.
+    </p>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <div class="form-panel">
+    <form id="careerForm" onsubmit="sendToWhatsApp(event)">
+      
+      <div class="form-section-title">١. البيانات الأساسية</div>
+      
+      <div class="form-group row">
+        <div>
+          <label>الاسم بالكامل<span>*</span></label>
+          <input type="text" id="fullName" placeholder="الأول، الأب، والعائلة" required>
+        </div>
+        <div>
+          <label>رقم الهاتف (واتساب)<span>*</span></label>
+          <input type="text" id="phone" placeholder="01xxxxxxxxx" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div>
+          <label>المؤهل الدراسي والتخصص<span>*</span></label>
+          <input type="text" id="degree" placeholder="مثال: بكالوريوس زراعة - تكنولوجيا حيوية" required>
+        </div>
+        <div>
+          <label>سنة التخرج<span>*</span></label>
+          <input type="number" id="gradYear" min="1980" max="2026" placeholder="مثال: 2022" required>
+        </div>
+      </div>
+
+      <div class="form-section-title">٢. الكفاءة والخبرات المهنية</div>
+
+      <div class="form-group row">
+        <div>
+          <label>عدد سنوات الخبرة الفعلية<span>*</span></label>
+          <select id="expYears" required>
+            <option value="" disabled selected>اختر الفئة...</option>
+            <option value="حديث تخرج / بدون خبرة">حديث تخرج / بدون خبرة</option>
+            <option value="من 1 إلى 3 سنوات">من 1 إلى 3 سنوات</option>
+            <option value="من 3 إلى 5 سنوات">من 3 إلى 5 سنوات</option>
+            <option value="أكثر من 5 سنوات">أكثر من 5 سنوات (خبير)</option>
+          </select>
+        </div>
+        <div>
+          <label>المسمى الوظيفي المستهدف<span>*</span></label>
+          <input type="text" id="jobTitle" placeholder="الوظيفة التي تقدم عليها" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>أبرز الشركات أو المشاريع التي عملت بها سابقاً وما هي مهامك؟<span>*</span></label>
+        <textarea id="pastWork" placeholder="اذكر باختصار أماكن عملك السابقة وطبيعة مسؤولياتك هناك..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>ما هي أقوى المهارات أو الأدوات التقنية التي تتقنها وتجعلك مناسباً لنا؟<span>*</span></label>
+        <textarea id="skills" placeholder="أدوات معملية، برامج هندسية، مهارات مالية أو ميدانية..." required></textarea>
+      </div>
+
+      <div class="form-section-title">٣. السيرة الذاتية والملفات</div>
+
+      <div class="form-group">
+        <label>رابط السيرة الذاتية (Google Drive / Dropbox)<span>*</span></label>
+        <div class="file-upload-wrapper">
+          <span class="file-upload-btn" onclick="alert('تسهيلاً للإرسال عبر واتساب، يرجى رفع الـ CV الخاص بك على جوجل درايف أو ميديافاير ولصق الرابط هنا.')">شرح الطريقة</span>
+          <input type="text" id="cvLink" placeholder="https://drive.google.com/..." required>
+        </div>
+        <small style="font-size:11px; color:var(--muted); display:block; margin-top:4px;">تأكد من جعل الرابط "عام للجميع" لتتمكن لجنة الفرز من مراجعته.</small>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.179.001 6.167 1.24 8.413 3.488 2.247 2.248 3.483 5.239 3.482 8.415-.004 6.544-5.34 11.892-11.893 11.892-2.003-.001-3.973-.51-5.716-1.483L0 24zm6.524-3.742l.366.217a9.88 9.88 0 005.056 1.4c5.441 0 9.865-4.423 9.868-9.864.003-2.637-1.023-5.117-2.89-6.984C17.054 3.16 14.568 2.134 11.95 2.133c-5.438 0-9.863 4.424-9.866 9.866-.001 2.028.531 4.02 1.541 5.779l.231.397-1.01 3.693 3.786-.993zM17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+        إرسال طلب التوظيف عبر واتساب الاستقطاب
+      </button>
+
+    </form>
+  </div>
+
+</div>
+
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault(); // منع الصفحة من إعادة التحميل
+
+  // استخراج البيانات من الحقول
+  const fullName = document.getElementById('fullName').value;
+  const phone = document.getElementById('phone').value;
+  const degree = document.getElementById('degree').value;
+  const gradYear = document.getElementById('gradYear').value;
+  const expYears = document.getElementById('expYears').value;
+  const jobTitle = document.getElementById('jobTitle').value;
+  const pastWork = document.getElementById('pastWork').value;
+  const skills = document.getElementById('skills').value;
+  const cvLink = document.getElementById('cvLink').value;
+
+  // رقم واتساب المسؤول عن التوظيف بالشركة (ضع الرقم المخصص هنا بدون أصفار أو علامة +)
+  // مثال: 201000000000
+  const companyWhatsAppNumber = "201055841560"; 
+
+  // صياغة الرسالة وتنسيقها بشكل شيك جداً ومنظم ومقروء لمسؤول الـ HR
+  const message = `*💼 طلب انضمام لفريق عمل حابي تيك* \n\n` +
+                  `*👤 البيانات الشخصية:* \n` +
+                  `• *الاسم:* ${fullName}\n` +
+                  `• *الهاتف:* ${phone}\n\n` +
+                  `*🎓 المؤهل والتعليم:* \n` +
+                  `• *التخصص:* ${degree}\n` +
+                  `• *سنة التخرج:* ${gradYear}\n\n` +
+                  `*🔬 الخبرة المهنية:* \n` +
+                  `• *المسمى المستهدف:* ${jobTitle}\n` +
+                  `• *مستوى الخبرة:* ${expYears}\n\n` +
+                  `*🏢 التاريخ الوظيفي والمشاريع:* \n` +
+                  `${pastWork}\n\n` +
+                  `*⚡ المهارات والأدوات:* \n` +
+                  `${skills}\n\n` +
+                  `*📎 رابط السيرة الذاتية (CV):* \n` +
+                  `${cvLink}`;
+
+  // تحويل النص لترميز مناسب للروابط (URL Encoding)
+  const encodedMessage = encodeURIComponent(message);
+
+  // إنشاء رابط الواتساب المباشر
+  const whatsAppUrl = `https://wa.me/${companyWhatsAppNumber}?text=${encodedMessage}`;
+
+  // فتح الرابط في نافذة جديدة
+  window.open(whatsAppUrl, '_blank');
+}
+</script>
+
+<div class="footer-line">
+  © 2026 Hapi Agri-Biotech & Food Industries · جميع الحقوق محفوظة
+  &nbsp;|&nbsp; <a href="capital-management.html">إدارة رؤوس الأموال</a>
+  &nbsp;|&nbsp; <a href="guarantees.html">الضمانات الاستثمارية</a>
+  &nbsp;|&nbsp; <a href="cost-saving.html">توفير النفقات</a>
+  &nbsp;|&nbsp; <a href="privacy.html">سياسة الخصوصية</a>
+  &nbsp;|&nbsp; <a href="index.html">الرئيسية</a>
+</div>
+
+</body>
+</html>

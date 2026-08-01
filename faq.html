@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأسئلة الشائعة | حابي للتكنولوجيا الحيوية الزراعية</title>
+<meta name="description" content="إجابات وافية وشاملة حول نموذج استثمار حابي، التقنيات الحيوية المستخدمة، الضمانات القانونية، وكيفية بدء الشراكة.">
+<link rel="icon" type="image/jpeg" href="hapi-logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:#0b1a0e;color:#e4e0d4;line-height:1.8;overflow-x:hidden}
+:root{
+  --gold:#C8A94A;--gold2:#E0C97A;--gold3:rgba(200,169,74,0.15);--gold4:rgba(200,169,74,0.07);
+  --panel:#162819;--panel2:#1a3020;--border:rgba(200,169,74,0.2);--cream:#e4e0d4;
+  --muted:#7a9882;--faint:#3a5a42;--r:8px;--r2:16px;
+}
+a{text-decoration:none;color:var(--gold)}
+a:hover{color:var(--gold2)}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;inset-inline:0;top:0;z-index:999;height:66px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 3rem;
+  background:rgba(11,26,14,0.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{width:38px;height:38px;border-radius:var(--r);border:1px solid var(--border);object-fit:cover}
+.nav-text strong{display:block;font-size:13px;font-weight:700;color:var(--cream)}
+.nav-text span{font-size:10px;color:var(--muted)}
+.nav-back{background:var(--gold);color:#0b1a0e;padding:8px 20px;border-radius:var(--r);font-size:13px;font-weight:700;font-family:'Cairo',sans-serif;text-decoration:none}
+.nav-back:hover{background:var(--gold2)}
+
+/* ── HERO ── */
+.hero{
+  min-height:45vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:7rem 2rem 1rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200,169,74,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, rgba(94,203,138,0.05) 0%, transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(200,169,74,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,74,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 0%, black 0%, transparent 80%);
+}
+.hero-content{position:relative;z-index:1;max-width:760px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold3);border:1px solid var(--border);
+  border-radius:100px;padding:6px 18px;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.5rem;
+}
+.hero-eyebrow::before{content:'◆';font-size:8px}
+.hero h1{
+  font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--cream);
+  line-height:1.2;margin-bottom:1.2rem;
+}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:14.5px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.9}
+
+/* ── WRAP & CATEGORIES ── */
+.page-wrap{max-width:850px;margin:0 auto;padding:0 2rem 5rem;position:relative;z-index:2}
+
+.cat-section {
+  margin-bottom: 3rem;
+}
+.cat-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--border);
+}
+.cat-title::before {
+  content: '■';
+  font-size: 10px;
+  color: var(--gold2);
+}
+
+/* ── ACCORDION (FAQ ITEM) ── */
+.faq-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+.faq-item:hover {
+  border-color: rgba(200,169,74,0.4);
+  background: var(--panel2);
+}
+.faq-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.2rem 1.5rem;
+  text-align: right;
+  color: var(--cream);
+  font-family: 'Cairo', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold4);
+  border: 1px solid var(--border);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: transform 0.3s ease, background 0.3s;
+  flex-shrink: 0;
+}
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  background: rgba(11,26,14,0.3);
+}
+.faq-content-inner {
+  padding: 0 1.5rem 1.5rem;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.8;
+  border-top: 1px solid rgba(200,169,74,0.05);
+}
+
+/* Active State Styles via JS */
+.faq-item.active {
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.faq-item.active .faq-trigger {
+  color: var(--gold2);
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  background: var(--gold);
+  color: #0b1a0e;
+}
+.faq-item.active .faq-content {
+  max-height: 1000px; /* بوح كافي للمحتوى الطويل */
+  transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
+/* ── CALLOUT BOX ── */
+.cta-box {
+  background: linear-gradient(135deg, var(--panel), #122215);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 2.2rem;
+  text-align: center;
+  margin-top: 4rem;
+  position: relative;
+}
+.cta-box h3 { font-size: 18px; color: var(--cream); margin-bottom: 0.5rem; }
+.cta-box p { font-size: 13px; color: var(--muted); margin-bottom: 1.5rem; }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold); color: #0b1a0e; padding: 10px 24px;
+  border-radius: var(--r); font-size: 13.5px; font-weight: 700; transition: all 0.2s;
+}
+.cta-btn:hover { background: var(--gold2); transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+.footer-line{text-align:center;margin-top:4rem;font-size:11px;color:var(--faint);border-top:1px solid var(--border);padding-top:1.5rem}
+
+@media(max-width:640px){
+  .nav{padding:0 1.2rem}
+  .hero h1{font-size:1.6rem}
+  .faq-trigger{padding:1rem 1.2rem; font-size:13.5px}
+  .faq-content-inner{padding: 0 1.2rem 1.2rem; font-size:12.5px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="hapi-logo.jpeg" alt="Hapi Logo" class="nav-logo-img">
+    <div class="nav-text">
+      <strong>Hapi Agri-Biotech</strong>
+      <span>حابي للتكنولوجيا الحيوية الزراعية</span>
+    </div>
+  </a>
+  <a class="nav-back" href="index.html">← العودة للرئيسية</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">FAQ · مركز الدعم والمعرفة</div>
+    <h1>الأسئلة <em>الشائعة والمكررة</em></h1>
+    <p class="hero-sub">
+      كل ما تود معرفته عن حلولنا التكنولوجية، النموذج الاستثماري المبتكر، وآليات الحماية القانونية وضمان الأرباح في مكان واحد.
+    </p>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <div class="cat-section">
+    <div class="cat-title">النموذج الاستثماري والأرباح المالية</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>ما هو الحد الأدنى للاستثمار مع شركة حابي؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          يبدأ الحد الأدنى للاستثمار والمشاركة بحسب نوع العقد والبرنامج التمويلي المختار (مثل أسهم التوسعات المعملية أو عقود دورات الإنتاج الميداني). يمكنك مراجعة صفحة <a href="capital.html">إدارة رؤوس الأموال</a> أو التواصل مع قسم علاقات المستثمرين لتلقي نشرة الاكتتاب الحالية والحدود الدنيا المتاحة لكل شريحة.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>متى يتم توزيع الأرباح، وكيف يتم حسابها؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          تعتمد دورة توزيع الأرباح على طبيعة العقد المبرم؛ حيث توجد أرباح دورية تُصرف بنهاية كل دورة إنتاجية زراعية (كل 4 إلى 6 أشهر لحقول الهندسة الحيوية)، وأرباح ربع سنوية أو سنوية خاصة بالشركاء المساهمين في الأصول الرأسمالية والمختبرات. يتم احتساب الأرباح بناءً على العوائد الصافية لبيع المحاصيل والتطبيقات الحيوية بعد خصم مصاريف التشغيل.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>هل الأرباح مضمونة أم تخضع لنسب تقلب السوق؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          وفقاً لأحكام الشريعة والقوانين التجارية، تخضع الأرباح لنسب الربح والخسارة الفعلية. ومع ذلك، تقوم حابي بتقليل مخاطر تقلب السوق إلى حدها الأدنى عبر سياسة "التعاقد المسبق والتوريد الإلزامي لشركات التصنيع الغذائي والتصدير"، مما يضمن تسعير المحاصيل وبيعها بالكامل قبل بدء الشتاء والصيف الوظيفي.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cat-section">
+    <div class="cat-title">الضمانات القانونية وحماية الأموال</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>ما هي الضمانات القانونية التي يستلمها المستثمر؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          يتحصل كل شريك مستثمر على عقد شراكة استثمارية موثق يثبت حصته المالية أو العينية، ومثبت به التزامات الشركة التشغيلية، بالإضافة إلى سندات أمر تجارية تضمن الأصول الرأسمالية المودعة، وإشعارات الحيازة الميدانية للمشروعات القائمة. لمعلومات أوفى يرجى مراجعة صفحة <a href="guarantees.html">الضمانات الاستثمارية</a>.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>ماذا يحدث في حالة الكوارث الطبيعية أو الآفات الزراعية المباغتة؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          تطبق حابي بروتوكول حماية صارم: أولاً، جميع مشروعاتنا مغطاة بوثائق تأمين شاملة ضد المخاطر والكوارث الطبيعية. ثانياً، نوظف حلول التكنولوجيا الحيوية لمقاومة الأمراض والتقلبات الجوية الجافة. ثالثاً، يتم توزيع المحافظ الاستثمارية جغرافياً على عدة محافظات لضمان عدم تأثر الشركة ككل بأي ظرف طارئ في منطقة معينة.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>هل يمكنني استرداد رأس المال قبل نهاية مدة العقد القانونية؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          نعم، تنص بنود الشراكة على إمكانية التسييل والتخارج المبكر بشرط تقديم طلب خطي قبل موعد التخارج بـ 60 يوماً على الأقل، وذلك لضمان تسوية المراكز المالية ودون الإضرار بالدورات الزراعية الحية ومعدلات نمو الأصول التشغيلية.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cat-section">
+    <div class="cat-title">التكنولوجيا الحيوية والتشغيل الميداني</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>ما المقصود بـ "التكنولوجيا الحيوية الزراعية" في مشاريعكم؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          هي استخدام الكائنات الدقيقة النافعة، المستخلصات الحيوية، والتقنيات المعملية المتقدمة لتحسين خصائص التربة، ورفع كفاءة امتصاص النبات للمغذيات، وإنتاج أسمدة ومخصبات عضوية ذكية بديلة للمواد الكيميائية الضارة. هذا ينتج محاصيل غزيرة، ذات جودة تصديرية ممتازة، وبتكاليف إنتاج أقل بنسبة تصل إلى 40%.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>كيف تساهم حابي في تقليل النفقات والمصاريف التشغيلية؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          نعتمد على إنتاج مخصباتنا الحيوية ذاتياً داخل مختبراتنا بدلاً من استيراد الأسمدة الكيميائية المكلفة، إلى جانب دمج أنظمة الري الذكية المعتمدة على الذكاء الاصطناعي واستشعار الرطوبة، مما يقلل الهدر في المياه والطاقة ومستلزمات الإنتاج بشكل جذري. اقرأ التفاصيل في صفحة <a href="savings.html">توفير النفقات</a>.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>هل تملك الشركة أراضٍ خاصة أم تعتمد على الإيجار؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          تعتمد استراتيجية حابي على نموذج هجين يجمع بين ملكية الأصول الثابتة (المعامل والمقرات الإدارية وبعض الأراضي النموذجية الأساسية) والاستئجار طويل الأجل للأراضي البكر الصالحة للاستصلاح، مما يمنحنا مرونة جغرافية عالية ويحمي رأس مال المستثمرين من الجمود في الأصول العقارية الصعبة التسييل.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cat-section">
+    <div class="cat-title">آلية البدء والتواصل</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>كيف يمكنني زيارة مواقعكم ومعاينتها على أرض الواقع؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          نرحب دائماً بزيارات المستثمرين والشركاء. يتم التنسيق لزيارة المعامل أو المزارع من خلال التواصل مع الدعم الفني عبر واتساب في صفحة <a href="channels.html">قنوات التواصل الرسمي</a> لتحديد موعد ملائم يرافقكم فيه أحد مهندسينا المختصين للشرح الميداني الكامل.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger"><span>أنا لست مزارعاً ولا أفهم في الزراعة، هل يمكنني الاستثمار؟</span><div class="faq-icon">▼</div></button>
+      <div class="faq-content">
+        <div class="faq-content-inner">
+          بكل تأكيد؛ هذا هو صلب نموذجنا! لست بحاجة لأي خبرة زراعية أو تقنية. تتولى أطقم حابي الإدارية والفنية والهندسية إدارة كافة العمليات من الألف إلى الياء (التحليل، الزراعة، الرعاية، الحصاد، والبيع)، بينما يقتصر دورك كشريك على المتابعة الدورية عبر التقارير المالية والتقنية واستلام الأرباح.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h3>هل لديك سؤال آخر لم تجد إجابته هنا؟</h3>
+    <p>فريق خدمة المستثمرين والدعم الاستشاري متواجد لمساعدتك والإجابة على استفساراتك المعقدة والدقيقة فوراً.</p>
+    <a href="https://wa.me/201055841560" target="_blank" class="cta-btn">
+      تحدث مع أحد مستشارينا الآن عبر واتساب
+    </a>
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const currentItem = trigger.parentElement;
+    const isOpen = currentItem.classList.contains('active');
+    
+    // إغلاق أي سؤال آخر مفتوح لجعل المظهر منظماً (اختياري)
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+    });
+
+    // فتح السؤال الحالي إذا لم يكن مفتوحاً بالفعل
+    if (!isOpen) {
+      currentItem.classList.add('active');
+    }
+  });
+});
+</script>
+
+<div class="footer-line">
+  © 2026 Hapi Agri-Biotech & Food Industries · جميع الحقوق محفوظة
+  &nbsp;|&nbsp; <a href="capital-management.html">إدارة رؤوس الأموال</a>
+  &nbsp;|&nbsp; <a href="guarantees.html">الضمانات الاستثمارية</a>
+  &nbsp;|&nbsp; <a href="capital-management.html">توفير النفقات</a>
+  &nbsp;|&nbsp; <a href="privacy.html">سياسة الخصوصية</a>
+  &nbsp;|&nbsp; <a href="index.html">الرئيسية</a>
+</div>
+
+</body>
+</html>

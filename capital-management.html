@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إدارة رؤوس الأموال | حابي للتكنولوجيا الحيوية الزراعية</title>
+<meta name="description" content="كيف تدير حابي رؤوس أموال مستثمريها بشفافية وكفاءة لتحقيق أعلى عائد ممكن.">
+<link rel="icon" type="image/jpeg" href="hapi-logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:#0b1a0e;color:#e4e0d4;line-height:1.8}
+:root{
+  --gold:#C8A94A;--gold2:#E0C97A;--gold3:rgba(200,169,74,0.15);
+  --panel:#162819;--border:rgba(200,169,74,0.2);--cream:#e4e0d4;
+  --muted:#7a9882;--faint:#3a5a42;--r:8px;--r2:16px;
+  --green:rgba(94,203,138,0.15);--green-text:#5ecb8a;
+}
+a{text-decoration:none;color:var(--gold)}
+a:hover{color:var(--gold2)}
+
+/* NAV */
+.nav{
+  position:fixed;inset-inline:0;top:0;z-index:999;height:66px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 3rem;
+  background:rgba(11,26,14,0.95);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{width:38px;height:38px;border-radius:var(--r);border:1px solid var(--border);object-fit:cover}
+.nav-text strong{display:block;font-size:13px;font-weight:700;color:var(--cream)}
+.nav-text span{font-size:10px;color:var(--muted)}
+.nav-back{
+  background:var(--gold);color:#0b1a0e;padding:8px 20px;
+  border-radius:var(--r);font-size:13px;font-weight:700;
+  font-family:'Cairo',sans-serif;text-decoration:none;
+}
+.nav-back:hover{background:var(--gold2)}
+
+.page-wrap{max-width:820px;margin:0 auto;padding:7rem 2rem 5rem}
+
+/* HERO */
+.page-hero{text-align:center;margin-bottom:3rem}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:.75rem}
+.eyebrow::before,.eyebrow::after{content:'';width:20px;height:1px;background:var(--gold);display:block}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--cream);line-height:1.25;margin-bottom:.6rem}
+.hero-sub{font-size:14px;color:var(--muted);max-width:540px;margin:0 auto}
+
+/* STATS */
+.big-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin-bottom:2.5rem}
+.big-stat{
+  background:var(--gold3);border:1px solid var(--border);border-radius:var(--r2);
+  padding:1.4rem .8rem;text-align:center;
+}
+.big-stat .num{font-size:1.9rem;font-weight:900;color:var(--gold);line-height:1}
+.big-stat .unit{font-size:12px;font-weight:700;color:var(--gold2)}
+.big-stat .lbl{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4}
+
+/* DIVIDER */
+.sec-div{display:flex;align-items:center;gap:12px;margin:2.5rem 0 1.5rem}
+.sec-div span{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.sec-div::before,.sec-div::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* CARD */
+.policy-card{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--r2);
+  padding:2.2rem 2.4rem;margin-bottom:1.4rem;
+}
+.policy-card h2{
+  font-size:1.05rem;font-weight:700;color:var(--gold);
+  margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
+}
+.policy-card p{font-size:13.5px;color:var(--muted);line-height:1.9;margin-bottom:.8rem}
+.policy-card p:last-child{margin-bottom:0}
+.policy-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:.5rem}
+.policy-card ul li{font-size:13.5px;color:var(--muted);padding-inline-start:1.2rem;position:relative}
+.policy-card ul li::before{content:'✦';color:var(--gold);font-size:9px;position:absolute;inset-inline-start:0;top:4px}
+
+/* HIGHLIGHT */
+.highlight{
+  background:var(--gold3);border:1px solid var(--border);border-radius:var(--r);
+  padding:1rem 1.4rem;margin:1rem 0;
+}
+.highlight p{color:var(--cream) !important;font-weight:700;font-size:13px !important;margin:0 !important}
+
+/* TIERS GRID */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.tier{
+  border:1px solid var(--border);border-radius:var(--r2);
+  padding:1.4rem 1.2rem;text-align:center;position:relative;
+  background:rgba(255,255,255,0.02);transition:border-color .2s;
+}
+.tier.featured{border-color:var(--gold);background:var(--gold3)}
+.tier-badge{
+  position:absolute;top:-11px;inset-inline-start:50%;transform:translateX(50%);
+  background:var(--gold);color:#0b1a0e;font-size:10px;font-weight:700;
+  padding:2px 10px;border-radius:100px;white-space:nowrap;
+}
+.tier-name{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem}
+.tier-amount{font-size:1.5rem;font-weight:900;color:var(--gold);line-height:1}
+.tier-unit{font-size:11px;color:var(--muted);margin-bottom:.8rem}
+.tier-perks{list-style:none;text-align:right;margin-top:.8rem}
+.tier-perks li{font-size:12px;color:var(--muted);padding:.3rem 0;border-bottom:1px solid rgba(200,169,74,0.08);display:flex;align-items:center;gap:7px}
+.tier-perks li:last-child{border-bottom:none}
+.tier-perks li::before{content:'✓';color:var(--green-text);font-weight:700;font-size:11px;flex-shrink:0}
+
+/* ALLOCATION CHART */
+.alloc{display:flex;flex-direction:column;gap:.9rem;margin-top:1rem}
+.alloc-row{display:flex;align-items:center;gap:12px}
+.alloc-label{font-size:13px;color:var(--cream);font-weight:600;width:170px;flex-shrink:0;text-align:right}
+.alloc-track{flex:1;height:10px;border-radius:100px;background:rgba(255,255,255,0.06);overflow:hidden}
+.alloc-fill{height:100%;border-radius:100px}
+.alloc-pct{font-size:13px;color:var(--gold);font-weight:700;width:36px;text-align:left;flex-shrink:0}
+
+/* PROCESS STEPS */
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.step{
+  background:rgba(255,255,255,0.02);border:1px solid var(--border);
+  border-radius:var(--r2);padding:1.3rem 1.4rem;display:flex;gap:14px;align-items:flex-start;
+}
+.step-num{
+  width:34px;height:34px;border-radius:50%;background:var(--gold3);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:900;color:var(--gold);flex-shrink:0;
+}
+.step-title{font-size:13.5px;font-weight:700;color:var(--cream);margin-bottom:3px}
+.step-desc{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* PROTECTION GRID */
+.protect-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.protect-item{
+  background:var(--green);border:1px solid rgba(94,203,138,0.2);
+  border-radius:var(--r2);padding:1.2rem 1.4rem;
+}
+.protect-item .pi-icon{font-size:1.3rem;margin-bottom:.4rem}
+.protect-item .pi-title{font-size:13px;font-weight:700;color:var(--green-text);margin-bottom:.3rem}
+.protect-item .pi-desc{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* CONTACT */
+.contact-box{
+  background:var(--gold3);border:1px solid var(--border);border-radius:var(--r2);
+  padding:1.8rem;text-align:center;margin-top:2rem;
+}
+.contact-box p{font-size:14px;color:var(--cream);margin-bottom:.5rem}
+.contact-box a{color:var(--gold);font-weight:700;font-size:14px;display:inline-block;margin-top:4px}
+
+.footer-line{text-align:center;margin-top:3rem;font-size:11px;color:var(--faint);border-top:1px solid var(--border);padding-top:1.5rem}
+
+@media(max-width:640px){
+  .big-stats{grid-template-columns:1fr 1fr}
+  .tiers{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .protect-grid{grid-template-columns:1fr}
+  .nav{padding:0 1.2rem}
+  .policy-card{padding:1.6rem 1.4rem}
+  .alloc-label{width:130px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="hapi-logo.jpeg" alt="Hapi Logo" class="nav-logo-img">
+    <div class="nav-text">
+      <strong>Hapi Agri-Biotech</strong>
+      <span>حابي للتكنولوجيا الحيوية الزراعية</span>
+    </div>
+  </a>
+  <a class="nav-back" href="index.html">← العودة للرئيسية</a>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-hero">
+    <div class="eyebrow">Capital Management · إدارة رأس المال</div>
+    <h1>إدارة رؤوس الأموال</h1>
+    <p class="hero-sub">نُدير رأس مالك كما ندير رأس مالنا — بشفافية كاملة وتوزيع ذكي يحقق أعلى عائد مع أدنى مخاطر ممكنة.</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="big-stats">
+    <div class="big-stat">
+      <div class="num">١٠٠</div>
+      <div class="unit">٪</div>
+      <div class="lbl">شفافية في توزيع رأس المال</div>
+    </div>
+    <div class="big-stat">
+      <div class="num">٣</div>
+      <div class="unit">قطاعات</div>
+      <div class="lbl">تنويع استثماري مدروس</div>
+    </div>
+    <div class="big-stat">
+      <div class="num">٣٠</div>
+      <div class="unit">يوم</div>
+      <div class="lbl">أول تقرير أداء بعد الاستثمار</div>
+    </div>
+    <div class="big-stat">
+      <div class="num">٠</div>
+      <div class="unit">رسوم خفية</div>
+      <div class="lbl">كل التكاليف معلنة مسبقاً</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: TIERS -->
+  <div class="sec-div"><span>أولاً — شرائح الاستثمار</span></div>
+
+  <div class="policy-card">
+    <h2>💼 اختر شريحتك الاستثمارية</h2>
+    <p>صممنا ثلاث شرائح استثمارية تناسب مختلف أحجام رؤوس الأموال، مع مزايا تتصاعد مع حجم الاستثمار:</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-name">الشريحة الأولى</div>
+        <div class="tier-amount">٢٠٠ك</div>
+        <div class="tier-unit">ج.م — ١ مليون ج.م</div>
+        <ul class="tier-perks">
+          <li>تقارير ربع سنوية</li>
+          <li>مدير حساب مشترك</li>
+          <li>دعم فني أساسي</li>
+          <li>زيارة ميدانية كل ٣ شهور</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-badge">الأكثر طلباً</div>
+        <div class="tier-name">الشريحة الثانية</div>
+        <div class="tier-amount">١م</div>
+        <div class="tier-unit">ج.م — ٥ مليون ج.م</div>
+        <ul class="tier-perks">
+          <li>تقارير شهرية مفصّلة</li>
+          <li>مدير حساب مخصص</li>
+          <li>دعم فني متقدم</li>
+          <li>زيارة ميدانية شهرية</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">الشريحة الثالثة</div>
+        <div class="tier-amount">+٥م</div>
+        <div class="tier-unit">ج.م فأكثر</div>
+        <ul class="tier-perks">
+          <li>تقارير أسبوعية + لوحة بيانات</li>
+          <li>فريق إدارة مخصص</li>
+          <li>أولوية في الفرص الجديدة</li>
+          <li>مراجعة استراتيجية فصلية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: ALLOCATION -->
+  <div class="sec-div"><span>ثانياً — توزيع رأس المال</span></div>
+
+  <div class="policy-card">
+    <h2>📊 كيف يُوزَّع رأس مالك؟</h2>
+    <p>نتبع استراتيجية توزيع مدروسة تُحقق التوازن بين النمو وضمان الاستقرار:</p>
+    <div class="alloc">
+      <div class="alloc-row">
+        <div class="alloc-label">الإنتاج الزراعي المباشر</div>
+        <div class="alloc-track"><div class="alloc-fill" style="width:50%;background:linear-gradient(90deg,#C8A94A,#E0C97A)"></div></div>
+        <div class="alloc-pct">٥٠٪</div>
+      </div>
+      <div class="alloc-row">
+        <div class="alloc-label">الصناعات الغذائية والتصنيع</div>
+        <div class="alloc-track"><div class="alloc-fill" style="width:25%;background:linear-gradient(90deg,#5ecb8a,#7ae0a8)"></div></div>
+        <div class="alloc-pct">٢٥٪</div>
+      </div>
+      <div class="alloc-row">
+        <div class="alloc-label">البنية التحتية والمعدات</div>
+        <div class="alloc-track"><div class="alloc-fill" style="width:15%;background:linear-gradient(90deg,#6a9fd8,#8bbdee)"></div></div>
+        <div class="alloc-pct">١٥٪</div>
+      </div>
+      <div class="alloc-row">
+        <div class="alloc-label">احتياطي طوارئ وسيولة</div>
+        <div class="alloc-track"><div class="alloc-fill" style="width:10%;background:linear-gradient(90deg,#b89a6a,#d4b98a)"></div></div>
+        <div class="alloc-pct">١٠٪</div>
+      </div>
+    </div>
+    <div class="highlight" style="margin-top:1.2rem">
+      <p>🔒 احتياطي الطوارئ (١٠٪) محمي ومنفصل تماماً — لا يُمسّ إلا في حالات الطوارئ الموثقة.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3: PROCESS -->
+  <div class="sec-div"><span>ثالثاً — مسار إدارة رأس المال</span></div>
+
+  <div class="policy-card">
+    <h2>🔄 خطوات إدارة استثمارك</h2>
+    <p>من لحظة الإيداع حتى توزيع الأرباح — كل خطوة واضحة ومُوثَّقة:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">١</div>
+        <div class="step-body">
+          <div class="step-title">تقييم المشروع المناسب</div>
+          <div class="step-desc">نحلل رأس مالك وأهدافك لنختار المشروع الأمثل من محفظتنا الزراعية.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٢</div>
+        <div class="step-body">
+          <div class="step-title">توقيع العقد وتوثيقه</div>
+          <div class="step-desc">عقد واضح يحدد نسب الأرباح والحقوق والجدول الزمني بشكل قانوني ملزم.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٣</div>
+        <div class="step-body">
+          <div class="step-title">تخصيص رأس المال وتوزيعه</div>
+          <div class="step-desc">يُوزَّع رأس مالك وفق الاستراتيجية المتفق عليها مع إشعارك بكل خطوة.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٤</div>
+        <div class="step-body">
+          <div class="step-title">التشغيل والمتابعة الميدانية</div>
+          <div class="step-desc">فريقنا يُشرف على العمليات يومياً ويُرفع تقرير أداء في المواعيد المحددة.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٥</div>
+        <div class="step-body">
+          <div class="step-title">الحصاد وتحقيق الإيرادات</div>
+          <div class="step-desc">نُحوّل المحصول إلى إيرادات عبر قنوات تسويقية مضمونة ومتعاقد معها مسبقاً.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٦</div>
+        <div class="step-body">
+          <div class="step-title">توزيع الأرباح وإعادة الاستثمار</div>
+          <div class="step-desc">توزيع الأرباح في الموعد المحدد، مع خيار إعادة الاستثمار لتضخيم العائد.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: PROTECTION -->
+  <div class="sec-div"><span>رابعاً — حماية رأس المال</span></div>
+
+  <div class="policy-card">
+    <h2>🛡️ كيف نحمي رأس مالك؟</h2>
+    <p>ننتهج منظومة متكاملة من الضمانات لحماية استثمارك في كل الظروف:</p>
+    <div class="protect-grid">
+      <div class="protect-item">
+        <div class="pi-icon">📋</div>
+        <div class="pi-title">عقود موثقة قانونياً</div>
+        <div class="pi-desc">كل التزاماتنا مُدوَّنة في عقود رسمية خاضعة للقانون المصري وقابلة للتقاضي.</div>
+      </div>
+      <div class="protect-item">
+        <div class="pi-icon">🌾</div>
+        <div class="pi-title">تأمين على المحاصيل</div>
+        <div class="pi-desc">المشاريع مؤمَّن عليها ضد الكوارث الطبيعية والآفات لضمان استمرار العائد.</div>
+      </div>
+      <div class="protect-item">
+        <div class="pi-icon">🔀</div>
+        <div class="pi-title">تنويع المحفظة</div>
+        <div class="pi-desc">توزيع رأس المال على أكثر من مشروع ومحصول يُقلل المخاطر إلى أدنى مستوى.</div>
+      </div>
+      <div class="protect-item">
+        <div class="pi-icon">💰</div>
+        <div class="pi-title">احتياطي سيولة محمي</div>
+        <div class="pi-desc">١٠٪ من رأس المال محجوزة كاحتياطي نقدي لا يُستخدم إلا في حالات الطوارئ الموثقة.</div>
+      </div>
+    </div>
+    <div class="highlight" style="margin-top:1.2rem">
+      <p>🌿 نموذجنا مبني على تحقيق نمو مستدام — لا مخاطرة عشوائية على حساب أموالك.</p>
+    </div>
+  </div>
+
+  <div class="contact-box">
+    <p>هل تريد استشارة مجانية لتحديد الشريحة والمشروع المناسب لرأس مالك؟</p>
+    <a href="https://wa.me/201055740251">📞 تحدث مع مستشارنا الاستثماري عبر واتساب</a>
+  </div>
+
+  <div class="footer-line">
+    © 2026 Hapi Agri-Biotech & Food Industries · جميع الحقوق محفوظة
+    &nbsp;|&nbsp; <a href="guarantees.html">الضمانات الاستثمارية</a>
+    &nbsp;|&nbsp; <a href="savings.html">توفير النفقات</a>
+    &nbsp;|&nbsp; <a href="privacy.html">سياسة الخصوصية</a>
+    &nbsp;|&nbsp; <a href="index.html">الصفحة الرئيسية</a>
+  </div>
+
+</div>
+</body>
+</html>

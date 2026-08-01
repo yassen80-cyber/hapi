@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من نحن ورؤيتنا | حابي للتكنولوجيا الحيوية الزراعية</title>
+<meta name="description" content="تعرف على شركة حابي للتكنولوجيا الحيوية الزراعية — رؤيتنا، رسالتنا، وقيمنا العلمية التي تقود مستقبل الاستثمار الزراعي المستدام.">
+<link rel="icon" type="image/jpeg" href="hapi-logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:#0b1a0e;color:#e4e0d4;line-height:1.8;overflow-x:hidden}
+:root{
+  --gold:#C8A94A;--gold2:#E0C97A;--gold3:rgba(200,169,74,0.15);--gold4:rgba(200,169,74,0.07);
+  --panel:#162819;--panel2:#1a3020;--border:rgba(200,169,74,0.2);--cream:#e4e0d4;
+  --muted:#7a9882;--faint:#3a5a42;--r:8px;--r2:16px;
+  --green:rgba(94,203,138,0.12);--green-text:#5ecb8a;
+}
+a{text-decoration:none;color:var(--gold)}
+a:hover{color:var(--gold2)}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;inset-inline:0;top:0;z-index:999;height:66px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 3rem;
+  background:rgba(11,26,14,0.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{width:38px;height:38px;border-radius:var(--r);border:1px solid var(--border);object-fit:cover}
+.nav-text strong{display:block;font-size:13px;font-weight:700;color:var(--cream)}
+.nav-text span{font-size:10px;color:var(--muted)}
+.nav-back{background:var(--gold);color:#0b1a0e;padding:8px 20px;border-radius:var(--r);font-size:13px;font-weight:700;font-family:'Cairo',sans-serif;text-decoration:none}
+.nav-back:hover{background:var(--gold2)}
+
+/* ── HERO ── */
+.hero{
+  min-height:85vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200,169,74,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, rgba(94,203,138,0.05) 0%, transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(200,169,74,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,74,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 0%, black 0%, transparent 80%);
+}
+.hero-content{position:relative;z-index:1;max-width:760px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold3);border:1px solid var(--border);
+  border-radius:100px;padding:6px 18px;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:2rem;
+}
+.hero-eyebrow::before{content:'◆';font-size:8px}
+.hero h1{
+  font-size:clamp(2.4rem,6vw,4rem);font-weight:900;color:var(--cream);
+  line-height:1.15;margin-bottom:1.2rem;
+  text-shadow:0 0 60px rgba(200,169,74,0.15);
+}
+.hero h1 em{
+  font-style:normal;color:var(--gold);
+  position:relative;display:inline-block;
+}
+.hero h1 em::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;
+  height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.hero-sub{font-size:15px;color:var(--muted);max-width:580px;margin:0 auto 2.5rem;line-height:1.9}
+
+/* ── WRAP ── */
+.page-wrap{max-width:860px;margin:0 auto;padding:0 2rem 5rem}
+
+/* ── DIVIDER ── */
+.sec-div{display:flex;align-items:center;gap:12px;margin:3rem 0 1.5rem}
+.sec-div span{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.sec-div::before,.sec-div::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ── CARD ── */
+.policy-card{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--r2);
+  padding:2.2rem 2.4rem;margin-bottom:1.4rem;
+}
+.policy-card h2{
+  font-size:1.05rem;font-weight:700;color:var(--gold);
+  margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
+}
+.policy-card p{font-size:13.5px;color:var(--muted);line-height:1.9;margin-bottom:.8rem}
+.policy-card p:last-child{margin-bottom:0}
+
+/* ── HIGHLIGHT ── */
+.highlight{background:var(--gold3);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.4rem;margin:1rem 0}
+.highlight p{color:var(--cream) !important;font-weight:700;font-size:13px !important;margin:0 !important}
+
+/* ── VISION & MISSION GRID (INSIDE STYLE) ── */
+.inside-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.inside-item{
+  background:var(--gold4);border:1px solid var(--border);border-radius:var(--r2);
+  padding:1.8rem 1.4rem;text-align:center;
+}
+.inside-item .ii-icon{font-size:2rem;margin-bottom:0.8rem}
+.inside-item .ii-title{font-size:15px;font-weight:800;color:var(--gold);margin-bottom:.5rem}
+.inside-item .ii-desc{font-size:13px;color:var(--muted);line-height:1.8}
+
+/* ── VALUES (METHODOLOGY STYLE) ── */
+.method-steps{display:flex;flex-direction:column;gap:0;margin-top:1rem}
+.m-step{display:flex;gap:20px;padding-bottom:1.6rem;position:relative}
+.m-step:last-child{padding-bottom:0}
+.m-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:44px}
+.m-dot{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  background:var(--gold3);border:2px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:900;color:var(--gold);
+}
+.m-line{flex:1;width:2px;background:var(--border);margin-top:6px}
+.m-step:last-child .m-line{display:none}
+.m-body{padding-top:8px}
+.m-title{font-size:14px;font-weight:800;color:var(--cream);margin-bottom:.3rem}
+.m-desc{font-size:13px;color:var(--muted);line-height:1.75}
+
+/* ── WHY TRUST US (VS BLOCK STYLE) ── */
+.vs-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem}
+.vs-col{border-radius:var(--r2);padding:1.8rem}
+.vs-col.us{background:var(--green);border:1px solid rgba(94,203,138,0.2)}
+.vs-item{font-size:13px;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:flex-start;gap:10px;line-height:1.6;color:var(--green-text)}
+.vs-item:last-child{border-bottom:none}
+.vs-item .icon{flex-shrink:0;font-size:12px;margin-top:2px}
+
+/* ── CTA BANNER ── */
+.cta-banner{
+  background:linear-gradient(135deg,rgba(200,169,74,0.12) 0%, rgba(94,203,138,0.06) 100%);
+  border:1px solid var(--border);border-radius:var(--r2);
+  padding:2.8rem 2rem;text-align:center;margin-top:2rem;
+  position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(200,169,74,0.08) 0%, transparent 70%);
+}
+.cta-banner-content{position:relative;z-index:1}
+.cta-banner h3{font-size:1.5rem;font-weight:900;color:var(--cream);margin-bottom:.5rem}
+.cta-banner p{font-size:13.5px;color:var(--muted);margin-bottom:1.5rem}
+.cta-banner a{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold);color:#0b1a0e;
+  padding:13px 30px;border-radius:var(--r2);
+  font-size:14px;font-weight:800;font-family:'Cairo',sans-serif;text-decoration:none;
+  box-shadow:0 8px 24px rgba(200,169,74,0.3);transition:all .2s;
+}
+.cta-banner a:hover{background:var(--gold2);transform:translateY(-2px);color:#0b1a0e}
+
+.footer-line{text-align:center;margin-top:3rem;font-size:11px;color:var(--faint);border-top:1px solid var(--border);padding-top:1.5rem}
+
+@media(max-width:640px){
+  .nav{padding:0 1.2rem}
+  .hero h1{font-size:2rem}
+  .inside-grid{grid-template-columns:1fr}
+  .policy-card{padding:1.6rem 1.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="hapi-logo.jpeg" alt="Hapi Logo" class="nav-logo-img">
+    <div class="nav-text">
+      <strong>Hapi Agri-Biotech</strong>
+      <span>حابي للتكنولوجيا الحيوية الزراعية</span>
+    </div>
+  </a>
+  <a class="nav-back" href="index.html">← العودة للرئيسية</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">About Us & Vision · من نحن ورؤيتنا</div>
+    <h1>جذور علمية راسخة<br>لقيادة <em>مستقبل الزراعة</em></h1>
+    <p class="hero-sub">
+      نحن لا نبيع حلولاً جاهزة؛ بل نبتكر من خلال التكنولوجيا الحيوية والهندسة الزراعية المتقدمة مسارات استثمارية آمنة ومستدامة تحقق أعلى العوائد بأقل المخاطر.
+    </p>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <!-- ABOUT US -->
+  <div class="sec-div"><span>قصة حابي</span></div>
+
+  <div class="policy-card">
+    <h2>🌱 من نحن؟</h2>
+    <p>
+      تأسست <strong>شركة حابي للتكنولوجيا الحيوية الزراعية والصناعات الغذائية</strong>  منذ عشر سنوات ككيان هندسي وعلمي متكامل، يهدف إلى سد الفجوة بين البحث العلمي التطبيقي وواقع الاستثمار الزراعي في السوق المصري والعربي.
+    </p>
+    <p>
+      نضم نخبة من الاستشاريين والمهندسين الزراعيين، وخبراء التكنولوجيا الحيوية، والمحللين الماليين، لنقدم منظومة عمل تبدأ من فحص التربة والمناخ، وتمر بصياغة أدق دراسات الجدوى، وتصل إلى الإشراف الكامل على التنفيذ والتشغيل الفعلي في الميدان.
+    </p>
+    <div class="highlight" style="margin-top:1.2rem">
+      <p>📌 اسمنا مستوحى من "حابي" — إله النيل والخصب عند أجدادنا الفراعنة — لأننا نؤمن أن الأرض هبة العلم، والجهد، والتخطيط الذكي.</p>
+    </div>
+  </div>
+
+  <!-- VISION & MISSION -->
+  <div class="sec-div"><span>الرؤية والرسالة</span></div>
+
+  <div class="inside-grid">
+    <div class="inside-item">
+      <div class="ii-icon">👁️‍🗨️</div>
+      <div class="ii-title">رؤيتنا</div>
+      <div class="ii-desc">أن نكون الشريك الاستشاري والتنفيذي الأول والموثوق للمستثمرين في قطاع التكنولوجيا الحيوية الزراعية على مستوى الشرق الأوسط، دافعين بالقطاع نحو رقمنة كاملة واعتماد كلي على الحلول العلمية المستدامة بحلول عام 2030.</div>
+    </div>
+    <div class="inside-item">
+      <div class="ii-icon">🎯</div>
+      <div class="ii-title">رسالتنا</div>
+      <div class="ii-desc">تمكين المستثمرين من تحقيق أقصى كفاءة إنتاجية وربحية ممكنة، عبر تقديم استشارات زراعية ومالية قائمة على البيانات الميدانية الحقيقية والتكنولوجيا الحيوية الحديثة، لحماية رؤوس الأموال وتأمين الأمن الغذائي.</div>
+    </div>
+  </div>
+
+  <!-- CORE VALUES -->
+  <div class="sec-div"><span>قيمنا الجوهرية</span></div>
+
+  <div class="policy-card">
+    <h2>⚖️ المبادئ التي تحكم عملنا</h2>
+    <p>في حابي، لا نتنازل عن القيم التي بنينا عليها ثقة عملائنا في السوق:</p>
+    
+    <div class="method-steps">
+      <div class="m-step">
+        <div class="m-left"><div class="m-dot">١</div><div class="m-line"></div></div>
+        <div class="m-body">
+          <div class="m-title">الدقة العلمية الصارمة</div>
+          <div class="m-desc">لا نعتمد على التخمين أو التوقعات العشوائية. كل رقم، وكل توصية زراعية تخرج من حابي مدعومة بتحاليل مخبرية وبيانات مناخية واقتصادية موثقة.</div>
+        </div>
+      </div>
+      <div class="m-step">
+        <div class="m-left"><div class="m-dot">٢</div><div class="m-line"></div></div>
+        <div class="m-body">
+          <div class="m-title">النزاهة والشفافية المطلقة</div>
+          <div class="m-desc">نواجه المستثمر بالحقائق الميدانية كما هي. إذا كان المشروع غير ذي جدوى في سيناريو معين، نعلن ذلك بوضوح ونطرح البدائل فوراً لحماية أمواله.</div>
+        </div>
+      </div>
+      <div class="m-step">
+        <div class="m-left"><div class="m-dot">٣</div><div class="m-line"></div></div>
+        <div class="m-body">
+          <div class="m-title">الاستدامة البيئية</div>
+          <div class="m-desc">نركز بالكامل على حلول التكنولوجيا الحيوية التي تحافظ على خصوبة التربة، وترشد استهلاك المياه، وتقلل الاعتماد على الكيماويات الضارة.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY TRUST US -->
+  <div class="sec-div"><span>لماذا تثق في حابي؟</span></div>
+
+  <div class="vs-grid">
+    <div class="vs-col us">
+      <div class="vs-item"><span class="icon">✓</span> نجمع بين عمق التخصص العلمي والدراية الكاملة بآليات السوق المالي والزراعي.</div>
+      <div class="vs-item"><span class="icon">✓</span> نمتلك سجل أعمال حقيقي يثبت تطابق توقعاتنا الاستشارية مع النتائج على أرض الواقع.</div>
+      <div class="vs-item"><span class="icon">✓</span> لا ينتهي دورنا بتسليم الورق، بل نبقى مع المستثمر كشريك استشاري طوال الدورة الإنتاجية.</div>
+      <div class="vs-item"><span class="icon">✓</span> نطور حلولاً مخصصة لكل طبيعة أرض ومناخ بدلاً من الحلول النمطية المكررة.</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-banner-content">
+      <h3>لنبدأ في تخطيط نجاحك القادم</h3>
+      <p>تواصل مع فريقنا الاستشاري اليوم، وتعرف على كيفية تحويل فكرتك الاستثمارية إلى مشروع زراعي مستدام بأعلى معايير الأمان المالي.</p>
+      <a href="https://wa.me/01055740251">🚀 تواصل مع مستشارينا الآن</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-line">
+    © 2026 Hapi Agri-Biotech & Food Industries · جميع الحقوق محفوظة
+    &nbsp;|&nbsp; <a href="capital-management.html">إدارة رؤوس الأموال</a>
+    &nbsp;|&nbsp; <a href="guarantees.html">الضمانات الاستثمارية</a>
+    &nbsp;|&nbsp; <a href="cost-saving.html">توفير النفقات</a>
+    &nbsp;|&nbsp; <a href="privacy.html">سياسة الخصوصية</a>
+    &nbsp;|&nbsp; <a href="index.html">الرئيسية</a>
+  </div>
+
+</div>
+</body>
+</html>
