@@ -1,0 +1,13 @@
+# robots.txt — Hapi Agri-Biotech & Food Industries
+# https://www.hapi-agri.com
+
+User-agent: *
+Allow: /
+
+# حظر الملفات الداخلية غير المفيدة لجوجل
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://www.hapi-agri.com/sitemap.xml

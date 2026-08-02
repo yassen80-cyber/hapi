@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>توفير النفقات | حابي للتكنولوجيا الحيوية الزراعية</title>
+<meta name="description" content="كيف توفر مشاريع حابي الزراعية تكاليف الإنتاج وتحقق عائداً استثمارياً أعلى من السوق.">
+<link rel="icon" type="image/jpeg" href="hapi-logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Cairo',sans-serif;background:#0b1a0e;color:#e4e0d4;line-height:1.8}
+:root{
+  --gold:#C8A94A;--gold2:#E0C97A;--gold3:rgba(200,169,74,0.15);
+  --panel:#162819;--border:rgba(200,169,74,0.2);--cream:#e4e0d4;
+  --muted:#7a9882;--faint:#3a5a42;--red:rgba(220,60,60,0.15);
+  --red-text:#e07070;--r:8px;--r2:16px;
+}
+a{text-decoration:none;color:var(--gold)}
+a:hover{color:var(--gold2)}
+
+/* NAV */
+.nav{
+  position:fixed;inset-inline:0;top:0;z-index:999;height:66px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 3rem;
+  background:rgba(11,26,14,0.95);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{width:38px;height:38px;border-radius:var(--r);border:1px solid var(--border);object-fit:cover}
+.nav-text strong{display:block;font-size:13px;font-weight:700;color:var(--cream)}
+.nav-text span{font-size:10px;color:var(--muted)}
+.nav-back{
+  background:var(--gold);color:#0b1a0e;padding:8px 20px;
+  border-radius:var(--r);font-size:13px;font-weight:700;
+  font-family:'Cairo',sans-serif;text-decoration:none;
+}
+.nav-back:hover{background:var(--gold2);color:#0b1a0e}
+
+/* WRAP */
+.page-wrap{max-width:820px;margin:0 auto;padding:7rem 2rem 5rem}
+
+/* HERO */
+.page-hero{text-align:center;margin-bottom:3rem}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:.75rem}
+.eyebrow::before,.eyebrow::after{content:'';width:20px;height:1px;background:var(--gold);display:block}
+h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--cream);margin-bottom:.6rem;line-height:1.25}
+.hero-sub{font-size:14px;color:var(--muted);max-width:520px;margin:0 auto}
+
+/* BIG STATS */
+.big-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
+.big-stat{
+  background:var(--gold3);border:1px solid var(--border);border-radius:var(--r2);
+  padding:1.6rem 1rem;text-align:center;
+}
+.big-stat .num{font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1}
+.big-stat .unit{font-size:13px;font-weight:700;color:var(--gold);margin-top:2px}
+.big-stat .lbl{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.4}
+
+/* SECTION DIVIDER */
+.sec-div{
+  display:flex;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;
+}
+.sec-div span{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.sec-div::before,.sec-div::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* POLICY CARD */
+.policy-card{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--r2);
+  padding:2.2rem 2.4rem;margin-bottom:1.4rem;
+}
+.policy-card h2{
+  font-size:1.05rem;font-weight:700;color:var(--gold);
+  margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
+}
+.policy-card p{font-size:13.5px;color:var(--muted);line-height:1.9;margin-bottom:.8rem}
+.policy-card p:last-child{margin-bottom:0}
+.policy-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:.5rem}
+.policy-card ul li{font-size:13.5px;color:var(--muted);padding-inline-start:1.2rem;position:relative}
+.policy-card ul li::before{content:'✦';color:var(--gold);font-size:9px;position:absolute;inset-inline-start:0;top:4px}
+
+/* HIGHLIGHT */
+.highlight{
+  background:var(--gold3);border:1px solid var(--border);border-radius:var(--r);
+  padding:1rem 1.4rem;margin:1rem 0;
+}
+.highlight p{color:var(--cream) !important;font-weight:700;font-size:13px !important;margin:0 !important}
+
+/* COMPARISON TABLE */
+.compare-wrap{overflow-x:auto;margin-top:1rem}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr th{
+  padding:.75rem 1rem;font-weight:700;font-size:11px;letter-spacing:1px;
+  text-transform:uppercase;border-bottom:1px solid var(--border);
+}
+thead th:first-child{color:var(--muted);text-align:right}
+thead th.col-market{color:var(--red-text);text-align:center}
+thead th.col-hapi{color:var(--gold);text-align:center}
+tbody tr{border-bottom:1px solid rgba(200,169,74,0.08)}
+tbody tr:last-child{border-bottom:none}
+tbody td{padding:.7rem 1rem;color:var(--muted);vertical-align:middle}
+tbody td:first-child{font-weight:600;color:var(--cream);font-size:13px}
+.cell-market{
+  text-align:center;background:var(--red);color:var(--red-text);
+  font-weight:700;border-radius:6px;padding:.45rem .8rem;display:block;margin:auto;width:fit-content;
+}
+.cell-hapi{
+  text-align:center;background:var(--gold3);color:var(--gold);
+  font-weight:700;border-radius:6px;padding:.45rem .8rem;display:block;margin:auto;width:fit-content;
+}
+.cell-save{
+  text-align:center;color:#5ecb8a;font-weight:700;font-size:13px;
+}
+
+/* SAVINGS BARS */
+.bars{display:flex;flex-direction:column;gap:1.1rem;margin-top:1rem}
+.bar-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.bar-label span:first-child{font-size:13px;color:var(--cream);font-weight:600}
+.bar-label span:last-child{font-size:13px;color:var(--gold);font-weight:700}
+.bar-track{height:8px;border-radius:100px;background:rgba(255,255,255,0.06);overflow:hidden}
+.bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+
+/* CONTACT */
+.contact-box{
+  background:var(--gold3);border:1px solid var(--border);border-radius:var(--r2);
+  padding:1.8rem;text-align:center;margin-top:2rem;
+}
+.contact-box p{font-size:14px;color:var(--cream);margin-bottom:.5rem}
+.contact-box a{color:var(--gold);font-weight:700;font-size:14px;display:inline-block;margin-top:4px}
+
+/* FOOTER */
+.footer-line{text-align:center;margin-top:3rem;font-size:11px;color:var(--faint);border-top:1px solid var(--border);padding-top:1.5rem}
+
+@media(max-width:580px){
+  .big-stats{grid-template-columns:1fr 1fr}
+  .big-stats .big-stat:last-child{grid-column:1/-1}
+  .nav{padding:0 1.2rem}
+  .policy-card{padding:1.6rem 1.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="hapi-logo.jpeg" alt="Hapi Logo" class="nav-logo-img">
+    <div class="nav-text">
+      <strong>Hapi Agri-Biotech</strong>
+      <span>حابي للتكنولوجيا الحيوية الزراعية</span>
+    </div>
+  </a>
+  <a class="nav-back" href="index.html">← العودة للرئيسية</a>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-hero">
+    <div class="eyebrow">Cost Efficiency · كفاءة التكلفة</div>
+    <h1>كيف نوفّر لك نفقاتك؟</h1>
+    <p class="hero-sub">نماذجنا الزراعية المتكاملة تخفّض تكاليف الإنتاج بشكل حقيقي وموثّق — لا وعوداً، بل أرقاماً.</p>
+  </div>
+
+  <!-- BIG STATS -->
+  <div class="big-stats">
+    <div class="big-stat">
+      <div class="num">٤٠</div>
+      <div class="unit">٪</div>
+      <div class="lbl">متوسط توفير في تكاليف الإنتاج مقارنة بالزراعة التقليدية</div>
+    </div>
+    <div class="big-stat">
+      <div class="num">٦٠</div>
+      <div class="unit">٪</div>
+      <div class="lbl">توفير في استهلاك المياه بتقنية الري الذكي</div>
+    </div>
+    <div class="big-stat">
+      <div class="num">٣×</div>
+      <div class="unit"></div>
+      <div class="lbl">معدل الإنتاجية مقارنة بالمساحة التقليدية المعادلة</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="sec-div"><span>أولاً — مصادر التوفير</span></div>
+
+  <div class="policy-card">
+    <h2>💧 توفير المياه والطاقة</h2>
+    <p>نعتمد على أنظمة ري دقيقة مدعومة بالذكاء الاصطناعي تقلص الهدر وترفع الكفاءة:</p>
+    <ul>
+      <li>أنظمة ري بالتنقيط تحت السطحي توفر حتى ٦٠٪ من استهلاك المياه</li>
+      <li>مضخات تعمل بالطاقة الشمسية تلغي فاتورة الكهرباء التشغيلية جزئياً</li>
+      <li>حساسات رطوبة التربة توقف الري تلقائياً عند الاكتفاء</li>
+      <li>تجميع وإعادة استخدام مياه الصرف الزراعي بعد المعالجة</li>
+    </ul>
+    <div class="highlight">
+      <p>💡 توفير المياه وحده يعني توفير مباشر في تكاليف الضخ والصيانة والرسوم الحكومية.</p>
+    </div>
+  </div>
+
+  <div class="policy-card">
+    <h2>🌱 توفير المدخلات الزراعية</h2>
+    <p>التكنولوجيا الحيوية تُقلل الاعتماد على المدخلات التقليدية الباهظة:</p>
+    <ul>
+      <li>سلالات محسّنة وراثياً تقاوم الآفات وتحتاج مبيدات أقل بنسبة تصل ٥٠٪</li>
+      <li>أسمدة حيوية طبيعية بديلاً عن الكيماوية المرتفعة السعر</li>
+      <li>برامج مكافحة متكاملة تُقلل تكرار الرش وتكاليفه</li>
+      <li>بذور معتمدة بإنتاجية عالية تُقلل نسبة الهدر في كل دورة</li>
+    </ul>
+  </div>
+
+  <div class="policy-card">
+    <h2>⚙️ توفير تكاليف التشغيل</h2>
+    <p>النموذج التشغيلي المتكامل لحابي يُقلص التكاليف الخفية التي يتجاهلها المستثمرون:</p>
+    <ul>
+      <li>أتمتة العمليات الروتينية تُقلل الاعتماد على العمالة اليدوية</li>
+      <li>مراقبة المحصول عن بُعد تُلغي تكاليف الإشراف الميداني اليومي</li>
+      <li>التوريد المباشر للمستلزمات دون وسطاء بأسعار الجملة</li>
+      <li>صيانة وقائية منتظمة تمنع الأعطال المكلفة وتمدد عمر المعدات</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="sec-div"><span>ثانياً — مقارنة بالسوق</span></div>
+
+  <div class="policy-card">
+    <h2>📊 مقارنة التكاليف التشغيلية</h2>
+    <p>مقارنة تقديرية لتكاليف المشروع بين الزراعة التقليدية ومشاريع حابي لكل فدان سنوياً:</p>
+    <div class="compare-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>بند التكلفة</th>
+            <th class="col-market">الزراعة التقليدية</th>
+            <th class="col-hapi">مشاريع حابي</th>
+            <th style="text-align:center;color:#5ecb8a;font-size:11px">التوفير</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>المياه والري</td>
+            <td><span class="cell-market">٨٠٠٠ ج.م</span></td>
+            <td><span class="cell-hapi">٣٢٠٠ ج.م</span></td>
+            <td class="cell-save">↓ ٦٠٪</td>
+          </tr>
+          <tr>
+            <td>الأسمدة والمبيدات</td>
+            <td><span class="cell-market">١٢٠٠٠ ج.م</span></td>
+            <td><span class="cell-hapi">٥٥٠٠ ج.م</span></td>
+            <td class="cell-save">↓ ٥٤٪</td>
+          </tr>
+          <tr>
+            <td>العمالة والإشراف</td>
+            <td><span class="cell-market">١٠٠٠٠ ج.م</span></td>
+            <td><span class="cell-hapi">٦٠٠٠ ج.م</span></td>
+            <td class="cell-save">↓ ٤٠٪</td>
+          </tr>
+          <tr>
+            <td>الطاقة والوقود</td>
+            <td><span class="cell-market">٥٠٠٠ ج.م</span></td>
+            <td><span class="cell-hapi">٢٠٠٠ ج.م</span></td>
+            <td class="cell-save">↓ ٦٠٪</td>
+          </tr>
+          <tr>
+            <td>الصيانة والطوارئ</td>
+            <td><span class="cell-market">٤٠٠٠ ج.م</span></td>
+            <td><span class="cell-hapi">١٥٠٠ ج.م</span></td>
+            <td class="cell-save">↓ ٦٣٪</td>
+          </tr>
+          <tr style="background:rgba(200,169,74,0.06)">
+            <td style="font-weight:900;color:var(--cream)">إجمالي التكاليف</td>
+            <td><span class="cell-market" style="font-size:14px">٣٩٠٠٠ ج.م</span></td>
+            <td><span class="cell-hapi" style="font-size:14px">١٨٢٠٠ ج.م</span></td>
+            <td class="cell-save" style="font-size:15px;font-weight:900">↓ ٥٣٪</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1rem;font-size:12px;color:var(--faint)">* الأرقام تقديرية تعتمد على متوسطات السوق المصري وقد تتفاوت حسب نوع المحصول والموقع الجغرافي.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="sec-div"><span>ثالثاً — أثر التوفير على العائد</span></div>
+
+  <div class="policy-card">
+    <h2>📈 نسب التوفير حسب بند التكلفة</h2>
+    <p>توزيع التوفير الفعلي عبر بنود المشروع المختلفة:</p>
+    <div class="bars">
+      <div class="bar-row">
+        <div class="bar-label"><span>المياه والري</span><span>٦٠٪</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>الطاقة والوقود</span><span>٦٠٪</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>الأسمدة والمبيدات</span><span>٥٤٪</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:54%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>العمالة والإشراف</span><span>٤٠٪</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>الصيانة والطوارئ</span><span>٦٣٪</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:63%"></div></div>
+      </div>
+      <div class="bar-row" style="margin-top:.5rem;padding-top:.8rem;border-top:1px solid var(--border)">
+        <div class="bar-label">
+          <span style="color:var(--cream);font-weight:700">متوسط التوفير الإجمالي</span>
+          <span style="font-size:16px">٥٣٪</span>
+        </div>
+        <div class="bar-track" style="height:12px"><div class="bar-fill" style="width:53%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="policy-card">
+    <h2>💰 ماذا يعني التوفير لمستثمر بـ ١٠٠ فدان؟</h2>
+    <p>لنفرض أن مستثمراً يمتلك مشروعاً على ١٠٠ فدان — إليك الفارق السنوي:</p>
+    <ul>
+      <li>تكاليف تقليدية: <strong style="color:var(--red-text)">٣٫٩ مليون ج.م</strong> سنوياً</li>
+      <li>تكاليف مع حابي: <strong style="color:var(--gold)">١٫٨٢ مليون ج.م</strong> سنوياً</li>
+      <li>التوفير الصافي السنوي: <strong style="color:#5ecb8a">حتى ٢٫٠٨ مليون ج.م</strong></li>
+    </ul>
+    <div class="highlight">
+      <p>📌 التوفير في التكاليف يعني مباشرةً زيادة هامش ربحك دون الحاجة لرفع الأسعار أو زيادة المساحة.</p>
+    </div>
+    <p>كل جنيه تم توفيره في التكاليف هو جنيه إضافي في صافي أرباحك — وهذا ما يميز نموذج حابي عن الاستثمار الزراعي التقليدي.</p>
+  </div>
+
+  <div class="contact-box">
+    <p>تريد حساباً تفصيلياً لتوفير النفقات في مشروعك تحديداً؟</p>
+    <a href="https://wa.me/201055740251">📞 احصل على دراستك المجانية عبر واتساب</a>
+  </div>
+
+  <div class="footer-line">
+    © 2026 Hapi Agri-Biotech & Food Industries · جميع الحقوق محفوظة
+    &nbsp;|&nbsp; <a href="guarantees.html">الضمانات الاستثمارية</a>
+    &nbsp;|&nbsp; <a href="privacy.html">سياسة الخصوصية</a>
+    &nbsp;|&nbsp; <a href="terms.html">الشروط والأحكام</a>
+    &nbsp;|&nbsp; <a href="index.html">الصفحة الرئيسية</a>
+  </div>
+
+</div>
+</body>
+</html>
